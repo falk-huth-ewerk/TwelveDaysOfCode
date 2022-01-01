@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <Product>EWERK MFiles Solutions</Product>
+    <Authors>Team ECM (https://www.ewerk.com/innovation-hub/ecm)</Authors>
+    <Company>EWERK Group (https://www.ewerk.com)</Company>
+    <Copyright>Copyright © 2020 - %YEAR_PLACEHOLDER% by EWERK Group, Team ECM</Copyright>
+    <Version>1.0.0.0</Version>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+</Project>

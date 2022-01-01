@@ -13,7 +13,8 @@ $appFilePath = "bin\Debug\TwelveDaysOfCode.mfappx"
 $appGuid = "03e08122-6c6a-47ba-bcba-4d323bad2729"
 
 # Target vault
-$vaultName = "Twelve Days Of Code"
+# $vaultName = "Twelve Days Of Code" -> original value for comparism with other environments
+$vaultName = "Twelve-Days-Of-Code"
 
 # Connection details 
 $authType = [MFilesAPI.MFAuthType]::MFAuthTypeLoggedOnWindowsUser

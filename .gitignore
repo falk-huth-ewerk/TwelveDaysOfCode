@@ -9,6 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+vaultdef.xml
+AssemblyInfo.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -25,6 +27,7 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
+[Oo]ut/
 [Ll]og/
 *.mfappx
 
@@ -342,5 +345,6 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-# Allow nupkg in redist
-!redist/*.nupkg
+# Ignore nuget.config (used to push packages to github)
+/nuget.config
+/pacakge-publish.bat

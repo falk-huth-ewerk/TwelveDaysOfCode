@@ -1,0 +1,250 @@
+{
+    "AboutThisFile": {
+
+        "Description": "Sample JSON file for configuration of vaults which has to be copied and edited.",
+        "Instructions": [
+            {
+                "Step": 1,
+                "ToDo": "Copy this file to \"connections.json.user\" which won't be checked in into the GIT repository."
+            },
+            {
+                "Step": 2,
+                "ToDo": "Remove sections which you do not need (see RemoveCondition / KeepCondition).",
+                "Sections": [
+                    {
+                        "SectionName": "AboutThisFile",
+                        "RemoveCondition": "Remove always",
+                        "KeepCondition": "Keep never"
+                    },
+                    {
+                        "SectionName": "VaultConnections",
+                        "RemoveCondition": "Remove if you have only 1 connection",
+                        "KeepCondition": "Keep if you have more than one connection"
+                    },
+                    {
+                        "SectionName": "VaultConnection",
+                        "RemoveCondition": "Remove if you have more than one connection",
+                        "KeepCondition": "Keep if you have only 1 connection"
+                    }
+                ]
+            },
+            {
+                "Step": 3,
+                "ToDo": "Configure connection(s) entry/entries",
+                "Fields": [
+                    {
+                        "FieldName": "vaultName",
+                        "Description": "Name of the vault as defined in Admin Client"
+                    },
+                    {
+                        "connection": "connection",
+                        "Description": "Description of the connection"
+                    },
+                    {
+                        "FieldName": "authType",
+                        "Description": "Choose one of the following values:",
+                        "AllowedValues": [
+                            {
+                                "IntValueToBeSet": 1,
+                                "MeansEnumValue": "[MFilesAPI.MFAuthType]::MFAuthTypeLoggedOnWindowsUser"
+                            },
+                            {
+                                "IntValueToBeSet": 2,
+                                "MeansEnumValue": "[MFilesAPI.MFAuthType]::MFAuthTypeSpecificWindowsUser"
+                            },
+                            {
+                                "IntValueToBeSet": 3,
+                                "MeansEnumValue": "[MFilesAPI.MFAuthType]::MFAuthTypeSpecificMFilesUser"
+                            }
+                        ]
+                    },
+                    {
+                        "FieldName": "userName",
+                        "Description": "User name for logging in - empty for grpc-local and ncalrpc"
+                    },
+                    {
+                        "FieldName": "password",
+                        "Description": "Password for logging in (CLEAR VALUE NEEDED!!!)- empty for grpc-local and ncalrpc",
+                        "WARNING": "DO NOT store NEVER EVER the clear password for logins which can access sensitive data like your company account!!!'"
+                    },
+                    {
+                        "FieldName": "domain",
+                        "Description": "Domain for windows logins, e.g. INTRANET for EWERK internal network"
+                    },
+                    {
+                        "FieldName": "spn",
+                        "Description": "SPN"
+                    },
+                    {
+                        "FieldName": "protocolSequence",
+                        "Description": "Choose one of the following values:",
+                        "AllowedValues": [
+                            {
+                                "StringValueToBeSet": "ncacn_ip_tcp",
+                                "MeansIntValue": 1,
+                                "DisplayName": "TCP/IP"
+                            },
+                            {
+                                "StringValueToBeSet": "grpc",
+                                "MeansIntValue": 2,
+                                "DisplayName": "gRPC"
+                            },
+                            {
+                                "StringValueToBeSet": "grpc-local",
+                                "MeansIntValue": 3,
+                                "DisplayName": "local gRPC"
+                            },
+                            {
+                                "StringValueToBeSet": "ncacn_spx",
+                                "MeansIntValue": 4,
+                                "DisplayName": "SPX"
+                            },
+                            {
+                                "StringValueToBeSet": "ncalrpc",
+                                "MeansIntValue": 5,
+                                "DisplayName": "Local Procedure Call (LPC)"
+                            },
+                            {
+                                "StringValueToBeSet": "ncacn_http",
+                                "MeansIntValue": 6,
+                                "DisplayName": "HTTPS"
+                            }
+                        ]
+                    },
+                    {
+                        "FieldName": "networkAddress",
+                        "Description": "Network address as host name or IP address - empty for grpc-local and ncalrpc"
+                    },
+                    {
+                        "FieldName": "endpoint",
+                        "Description": "Port numnber for connection, e.g. 2266 for TCP/IP - null for grpc-local and ncalrpc"
+                    },
+                    {
+                        "FieldName": "encryptedConnection",
+                        "Description": "Choose one of the following values:",
+                        "AllowedValues": [
+                            {
+                                "BoolValueToBeSet": true,
+                                "Meaning": "Connection should be encrypted"
+                            },
+                            {
+                                "BoolValueToBeSet": false,
+                                "Meaning": "Connection should NOT be encrypted"
+                            }
+                        ]
+                    },
+                    {
+                        "FieldName": "localComputerName",
+                        "Description": "Computer name of your local computer from which you try to access, e.g. EW-NB-1234"
+                    },
+                    {
+                        "FieldName": "deploy",
+                        "Description": "Choose one of the following values:",
+                        "AllowedValues": [
+                            {
+                                "BoolValueToBeSet": true,
+                                "Meaning": "Connection should be encrypted"
+                            },
+                            {
+                                "BoolValueToBeSet": false,
+                                "Meaning": "Connection should NOT be encrypted"
+                            }
+                        ]
+                    },
+                    {
+                        "FieldName": "subPackage",
+                        "Description": "Package where the classes should be created in within project namespace",
+                        "Example": {
+                            "ProjectNamespace": "EWERK.MFiles.Solutions.VAF",
+                            "SubPackageSet": "EWMFILES.Dev",
+                            "NamespaceForMetadata": "EWERK.MFiles.Solutions.VAF.EWMFILES.Dev"
+                        },
+                        "Constraints": "Sub package won't be created if value is null or empty."
+                    }
+                ]
+            }
+        ]
+    },
+    "VaultConnections": [
+        {
+            "vaultName": "EWERK DMS Dev",
+            "connection": "Local development EWERK DMS",
+            "authType": 1,
+            "userName": "",
+            "password": "",
+            "domain": "",
+            "spn": "",
+            "protocolSequence": "ncalrpc",
+            "networkAddress": "",
+            "endpoint": null,
+            "encryptedConnection": false,
+            "localComputerName": "EW-NB-xxxx",
+            "deploy": true,
+            "subPackage": "EWMFILES.Dev"
+        },
+        {
+            "vaultName": "EWERK DMS Test",
+            "connection": "Test EWERK DMS - Root user",
+            "authType": 2,
+            "userName": "root_xxxxxx",
+            "password": "*************",
+            "domain": "INTRANET",
+            "spn": "",
+            "protocolSequence": "ncacn_ip_tcp",
+            "networkAddress": "EWSZT-DMS-APP01",
+            "endpoint": "2266",
+            "encryptedConnection": false,
+            "localComputerName": "EW-NB-xxxx",
+            "deploy": false,
+            "subPackage": "EWMFILES.Test"
+        },
+        {
+            "vaultName": "HL komm Dev",
+            "connection": "Local development HL komm",
+            "authType": 1,
+            "userName": "",
+            "password": "",
+            "domain": "",
+            "spn": "",
+            "protocolSequence": "ncacn_ip_tcp",
+            "networkAddress": "localhost",
+            "endpoint": "2266",
+            "encryptedConnection": false,
+            "localComputerName": "EW-NB-xxxx",
+            "deploy": true,
+            "subPackage": "HLKMFILES.Dev"
+        },
+        {
+            "vaultName": "Diakonie Leipzig Dev",
+            "connection": "Local development Diakonie Leipzig",
+            "authType": 1,
+            "userName": "",
+            "password": "",
+            "domain": "",
+            "spn": "",
+            "protocolSequence": "ncalrpc",
+            "networkAddress": "",
+            "endpoint": null,
+            "encryptedConnection": false,
+            "localComputerName": "EW-NB-xxxx",
+            "deploy": true,
+            "subPackage": "DDLMFILES.Dev"
+        }
+    ],
+    "VaultConnection": {
+        "vaultName": "EWERK DMS Dev",
+        "connection": "Local development EWERK DMS",
+        "authType": 1,
+        "userName": "",
+        "password": "",
+        "domain": "",
+        "spn": "",
+        "protocolSequence": "ncalrpc",
+        "networkAddress": "",
+        "endpoint": null,
+        "encryptedConnection": false,
+        "localComputerName": "EW-NB-xxxx",
+        "deploy": true,
+        "subPackage": "EWMFILES.Dev"
+    }
+}

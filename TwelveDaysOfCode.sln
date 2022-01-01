@@ -1,13 +1,53 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwelveDaysOfCode", "TwelveDaysOfCode\TwelveDaysOfCode.csproj", "{DBEA0E20-7C3A-49E2-B2B5-832DE0A3B113}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExifData", "ExifData\ExifData.csproj", "{2ECAFB57-CA13-4E5B-8A2C-53BA16E8D7AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportGists", "ImportGists\ImportGists.csproj", "{DF2D1C2E-E188-4EC6-92D1-4F2D2A45924D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E5A02A01-6B96-45EF-99DF-B5A02BA7ED2A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		ewerk.ico = ewerk.ico
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vault-backup", "vault-backup", "{A4FABE02-688F-4952-A32F-A2BD10F65A8D}"
+	ProjectSection(SolutionItems) = preProject
+		vault-backup\Twelve-Days-Of-Code.mfb = vault-backup\Twelve-Days-Of-Code.mfb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{0FA21C3E-5D1A-40B0-B6AE-085DECFD3D8F}"
+	ProjectSection(SolutionItems) = preProject
+		config\_README.md = config\_README.md
+		config\connections.json = config\connections.json
+		config\connections.json.user = config\connections.json.user
+		config\version.props = config\version.props
+		config\version.txt = config\version.txt
+		config\version.txt.user = config\version.txt.user
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{5F487EB4-D46B-4567-B631-1938B7BF5B9D}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\_README.md = scripts\_README.md
+		scripts\install-application.ps1 = scripts\install-application.ps1
+		scripts\install-application_UNFERTIG_ABER_NEU.ps1 = scripts\install-application_UNFERTIG_ABER_NEU.ps1
+		scripts\update-EWERK-version.ps1 = scripts\update-EWERK-version.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{885D75DD-F4C8-42BB-BAB4-643B7DB1B8E6}"
+	ProjectSection(SolutionItems) = preProject
+		lib\logo.png = lib\logo.png
+		lib\photo-for-exif-extraction.jpg = lib\photo-for-exif-extraction.jpg
+		lib\sample-configuration.txt = lib\sample-configuration.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +77,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4FABE02-688F-4952-A32F-A2BD10F65A8D} = {E5A02A01-6B96-45EF-99DF-B5A02BA7ED2A}
+		{0FA21C3E-5D1A-40B0-B6AE-085DECFD3D8F} = {E5A02A01-6B96-45EF-99DF-B5A02BA7ED2A}
+		{5F487EB4-D46B-4567-B631-1938B7BF5B9D} = {E5A02A01-6B96-45EF-99DF-B5A02BA7ED2A}
+		{885D75DD-F4C8-42BB-BAB4-643B7DB1B8E6} = {E5A02A01-6B96-45EF-99DF-B5A02BA7ED2A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {888BE562-4C55-49BB-81A6-59A75B70ACBC}
